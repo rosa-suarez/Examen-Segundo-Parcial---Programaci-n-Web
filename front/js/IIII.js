@@ -196,7 +196,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Si no está deshabilitada, primero revisamos sesión
       if (!checkSession()) {
-        alert("Por favor inicia sesión primero");
+         Swal.fire({
+            icon: "warning",
+            title: "Error de conexión",
+            text: 'Por favor inicia sesión primero'
+        });    
         modalLogin.classList.remove("hidden");
         return;
       }
@@ -564,7 +568,11 @@ if (contactForm) {
         if (typeof alertify !== 'undefined' && alertify && typeof alertify.success === 'function') {
           alertify.success("¡Mensaje enviado con éxito!");
         } else {
-          alert("¡Mensaje enviado con éxito!");
+          Swal.fire({ 
+                title: "¡Mensaje enviado con éxito!",
+                icon: "success",
+                draggable: true
+            });
         }
         contactForm.reset();
       } else {
@@ -576,4 +584,5 @@ if (contactForm) {
     }
   });
 }
+
 
