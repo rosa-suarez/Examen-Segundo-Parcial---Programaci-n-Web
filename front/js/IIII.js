@@ -580,9 +580,14 @@ if (contactForm) {
       }
     } catch (err) {
       console.error('Error enviando contacto:', err);
-      alert('No se pudo enviar el mensaje. Intenta más tarde.');
+      Swal.fire({
+            icon: "warning",
+            title: "Error",
+            text: 'No se pudo enviar el mensaje. Intenta más tarde'
+        });
     }
   });
 }
+
 
 
