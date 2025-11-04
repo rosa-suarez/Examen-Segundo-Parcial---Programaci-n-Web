@@ -1,0 +1,445 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+header {
+  background-color: #222;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header img {
+  width: 40px;
+  height: 40px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #d4af37;
+}
+
+.user-area button {
+  background-color: #d4af37;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #222;
+  font-weight: bold;
+}
+
+.user-area button:hover {
+  background-color: #b8922c;
+}
+
+.section {
+  padding: 60px 10%;
+  text-align: center;
+  flex: 1;
+}
+
+.section h2 {
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border: 2px solid #d4af37;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: #fffbea;
+}
+
+.card.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+footer a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Estilo para botón de descarga PDF */
+#downloadBtn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #2196f3;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none; /* desactivado al inicio */
+  opacity: 0.5; /* se ve desactivado */
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+#downloadBtn:hover {
+  background-color: #0b7dda;
+}
+
+/* --- MODALES --- */
+/* mostrar modal SOLO cuando NO tenga .hidden */
+
+#loginModal:not(.hidden),
+#failModal:not(.hidden) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+#loginModal div,
+#failModal div {
+  background: white;
+  width: 300px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+#loginModal form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Añade o verifica estas reglas para el modal */
+#loginModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loginModal > div {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  min-width: 300px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#closeModal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Cambia el estilo del footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* Ajusta el modal para que aparezca sobre todo */
+#loginModal:not(.hidden),
+#pythonModal:not(.hidden) {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  max-height: 90vh; /* Altura máxima del 90% de la ventana */
+  overflow-y: auto; /* Permite scroll si el contenido es muy largo */
+  margin: 20px;
+}
+
+.team-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.team-cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.team-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  transition: transform 0.3s;
+}
+
+.team-card img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.team-card h3 {
+  margin: 0.5rem 0 0.2rem 0;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.team-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.mission-section {
+  padding: 3rem 2rem; /* espacio arriba y abajo */
+  background: #f9f9f9; /* opcional: para diferenciar la sección */
+  text-align: center;
+  margin-top: 40px; /* espacio extra desde la sección anterior */
+}
+
+.mission-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.mission-section p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.mission-section ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  display: inline-block; /* centra la lista */
+  text-align: left; /* mantiene los items alineados a la izquierda */
+}
+
+.mission-section li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ===== SECCIONES LANDING ===== */
+.full-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 10%;
+  color: #222;
+}
+
+.full-section .content {
+  max-width: 800px;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.full-section h1,
+.full-section h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Fondo suave distinto por sección */
+.intro {
+  background-color: #f0f7ff;
+}
+
+.beneficios {
+  background-color: #fff9f0;
+}
+
+.comienza {
+  background-color: #f0fff2;
+}
+
+/* Botón coherente con la estética original */
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 25px;
+  background-color: #2b4eff;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1f38c7;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .full-section {
+    padding: 0 5%;
+  }
+  .full-section h1,
+  .full-section h2 {
+    font-size: 1.5rem;
+  }
+  .full-section p {
+    font-size: 1rem;
+  }
+}
+
+.h1form {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 30px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  width: 300px; /* ajusta este valor para hacerlo más pequeño */
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.formulario label {
+  font-size: 22px;
+}
+
+.formulario input {
+  height: 30px;
+}
+
+.formulario textarea {
+  height: 70px;
+}
+
+/* === BOTÓN FLOTANTE DE INSTAGRAM === */
+.instagram-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #d4af37;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.instagram-btn img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+
+.instagram-btn:hover {
+  transform: scale(1.1);
+  background-color: #b8922c;
+}
+
+.btn-submit {
+  padding: 12px 25px;
+  background-color: #2b4eff;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #1f38c7;
+}

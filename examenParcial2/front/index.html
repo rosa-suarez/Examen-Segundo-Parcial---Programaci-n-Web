@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VRJ Certifications</title>
+    <link rel="icon" href="./img/round!bgLogo.png" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <img src="./img/round!bgLogo.png" alt="Logo VRJ" />
+        <h2>VRJ Certifications</h2>
+        <h5>La sintaxis del éxito empieza aquí</h5>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="./index.html" class="active">Inicio</a></li>
+          <li><a href="./pages/certificaciones.html">Certificaciones</a></li>
+          <li><a href="./pages/nosotros.html">Nosotros</a></li>
+          <li><a href="./pages/contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="user-area">
+        <button id="loginBtn">Iniciar sesión</button>
+        <span id="userName" class="hidden"></span>
+        <button id="logoutBtn" class="hidden">Cerrar sesión</button>
+      </div>
+    </header>
+
+    <!-- Secciones tipo landing -->
+    <main>
+      <section class="intro full-section">
+        <div class="content">
+          <h1>Certifícate y demuestra tu conocimiento</h1>
+          <p>
+            En <strong>VRJ Certifications</strong> te ayudamos a validar tus
+            habilidades en programación y tecnología. Nuestras certificaciones
+            están diseñadas para impulsar tu carrera y abrirte nuevas
+            oportunidades.
+          </p>
+        </div>
+      </section>
+
+      <section class="beneficios full-section">
+        <div class="content">
+          <h2>¿Por qué certificarte con nosotros?</h2>
+          <p>
+            Nuestros exámenes están creados por estudiantes y docentes de la
+            <strong>UAA</strong>, con estándares profesionales y contenido
+            actualizado. Aprende, practica y demuestra tu dominio en los
+            lenguajes más usados del mercado.
+          </p>
+        </div>
+      </section>
+
+      <section class="comienza full-section">
+        <div class="content">
+          <h2>Comienza tu camino hoy</h2>
+          <p>
+            Explora nuestras certificaciones, regístrate y realiza tu examen en
+            línea. Al aprobar, recibirás un certificado digital respaldado por
+            <strong>VRJ</strong>.
+          </p>
+          <a href="./pages/certificaciones.html" class="btn"
+            >Ver certificaciones</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>2025 VRJ Certifications - La sintaxis del éxito empieza aquí</p>
+    </footer>
+
+    <!-- LOGIN MODAL -->
+    <div id="loginModal" class="hidden">
+      <div>
+        <span id="closeModal">&times;</span>
+        <h3>Iniciar sesión</h3>
+        <form id="formLogin">
+          <input type="text" id="cuenta" placeholder="Usuario" required />
+          <input
+            type="password"
+            id="contrasena"
+            placeholder="Contraseña"
+            required
+          />
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./js/IIII.js"></script>
+
+    <a
+      href="https://www.instagram.com/vrjcertif.inc/"
+      target="_blank"
+      class="instagram-btn"
+      title="Síguenos en Instagram"
+    >
+      <img src="/front/img/instagram.png" alt="Instagram" />
+    </a>
+  </body>
+</html>
