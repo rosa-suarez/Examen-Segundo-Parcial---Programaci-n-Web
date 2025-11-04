@@ -6,5 +6,21 @@
   { "cuenta": "Valeria",
     "contrasena": "vale123",
     "NombreC": "Valeria Paola Chávez Flores"
+  },
+  { "cuenta": "Rosy",
+    "contrasena": "rosy123",
+    "NombreC": "Rosa Lizeth Suárez Medina"
+  },
+  { "cuenta": "Silvia",
+    "contrasena": "silvia123",
+    "NombreC": "silvia torreon lopez"
+  },
+  { "cuenta": "Pedro",
+    "contrasena": "pedro123",
+    "NombreC": "Pedro Valentín"
+  },
+  { "cuenta": "Norma",
+    "contrasena": "norma123",
+    "NombreC": "Norma Suárez Vallín"
   }
 ]
