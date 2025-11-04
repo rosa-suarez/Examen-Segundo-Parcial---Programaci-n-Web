@@ -154,6 +154,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const payButton = document.getElementById('payButton');
     const startExamButton = document.getElementById('startExamButton');
 
+        // Mostrar alerta cuando el usuario intenta interactuar con el botón DESHABILITADO
+    document.addEventListener('pointerdown', (e) => {
+        try {
+            const el = document.elementFromPoint(e.clientX, e.clientY);
+            if (!el) return;
+            const btn = el.closest && el.closest('#startExamButton');
+            if (btn && btn.disabled) {
+                e.preventDefault();
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Pago requerido',
+                    text: 'Debes pagar antes de iniciar el examen'
+                });
+            }
+        } catch (err) {
+        }
+    });
+    
     // Mostrar modal al hacer click en la card de Python
     // Seleccionamos todas las tarjetas dentro del contenedor .cards
     const allCards = document.querySelectorAll(".cards .card");
@@ -558,3 +576,4 @@ if (contactForm) {
     }
   });
 }
+
