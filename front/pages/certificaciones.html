@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VRJ Certifications</title>
+    <link rel="icon" href="../img/round!bgLogo.png" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/cert.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <img src="../img/round!bgLogo.png" alt="Logo VRJ" />
+        <h2>VRJ Certifications</h2>
+        <h5>La sintaxis del éxito empieza aquí</h5>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="certificaciones.html">Certificaciones</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="user-area">
+        <button id="loginBtn">Iniciar sesión</button>
+        <span id="userName" class="hidden"></span>
+        <button id="logoutBtn" class="hidden">Cerrar sesión</button>
+      </div>
+    </header>
+
+<!-- Contenido de Certificaciones----------------------------------------------------- -->
+    <!-- 1. Selección de examen -->
+    <section id="inicio" class="section">
+      <h2>Selecciona tu certificación</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Python</h3>
+          <p>
+            Evalúa tus habilidades con uno de los lenguajes más usados en el
+            mundo!
+          </p>
+        </div>
+        <div class="card disabled">
+          <h3>JavaScript</h3>
+          <p>Disponible a partir del 01 de enero del 2026.</p>
+        </div>
+        <div class="card disabled">
+          <h3>C++</h3>
+          <p>Disponible a partir del 01 de enero del 2026.</p>
+        </div>
+        <div class="card disabled">
+          <h3>Java</h3>
+          <p>Disponible a partir del 01 de enero del 2026.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Examen -->
+    <section id="examen" class="section hidden">
+      <h2 class="nombre-intento"></h2>
+      <h2>Examen de Certificación Python</h2>
+      <div class="exam-container"></div>
+        <!-- Aquí se cargarán las preguntas dinámicamente -->
+      </div>
+    </section>
+
+    <!-- 3. Resultados -->
+    <section id="resultado" class="section hidden">
+      <h2>Resultados del examen</h2>
+      <p id="calificacion"></p>
+      <button id="btnCert">Imprimir certificado</button>
+    </section>
+    <!-- fallo -->
+    <div id="failModal" class="section hidden">
+      <div class="modal-content" id="failMsg"></div>
+    </div>
+
+
+    <!-- Nueva sección para detalles de Python -->
+    <section id="pythonDetails" class="section cert-details-section hidden">
+      <div class="cert-details">
+        <div class="cert-image">
+          <img src="../img/python-cert.png" alt="Python Certification" />
+        </div>
+        <div class="cert-info">
+          <h3>Certificación Python</h3>
+          <p>Demuestra tus conocimientos en:</p>
+          <ul>
+            <li>Fundamentos de Python</li>
+            <li>Estructuras de datos</li>
+            <li>Programación orientada a objetos</li>
+            <li>Manejo de excepciones</li>
+            <li>Bibliotecas estándar</li>
+          </ul>
+          <p class="cert-price">Precio: $50 USD</p>
+          <div class="cert-buttons">
+            <button id="payButton" class="btn-primary">Pagar certificación</button>
+            <button id="startExamButton" class="btn-secondary" disabled>Iniciar examen</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!---------------------------------------------------------------------------------------------->
+
+
+    <!-- Footer -->
+    <footer>
+      <p>2025 VRJ Certifications - La sintaxis del éxito empieza aquí</p>
+    </footer>
+
+    <!-- LOGIN MODAL -->
+    <div id="loginModal" class="section hidden">
+      <div>
+        <span id="closeModal">&times;</span>
+        <h3>Iniciar sesión</h3>
+        <form id="formLogin">
+          <input type="text" id="cuenta" placeholder="Usuario" required />
+          <input type="password" id="contrasena" placeholder="Contraseña" required />
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="../js/IIII.js"></script>
+  </body>
+</html>
