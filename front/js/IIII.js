@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "Esta certificación estará disponible pronto.";
         Swal.fire({
                     icon: "warning",
-                    title: "Curso no disponible",
+                    title: "Error de servidor",
                     text: `${mensaje}`
                 });
         return;
@@ -588,6 +588,7 @@ if (contactForm) {
     }
   });
 }
+
 
 
 
